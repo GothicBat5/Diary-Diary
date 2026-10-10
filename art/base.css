@@ -1,0 +1,266 @@
+
+:root {
+  /* Palette */
+  --paper: #fff7f2;
+  --blush: #fde4e4;
+  --ink: #4b2e36;
+  --ink-soft: #8a6870;
+  --pink: #f2a7bb;
+  --lime: #b9d66b;
+  --orange: #e8913f;
+  --plum: #7a3b52;
+
+  /* Accent colour for the current notebook, topic or pen name */
+  --c: var(--pink);
+
+  /* Misc */
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  --r: 16px;
+
+  /* Type */
+  --display: 'Caveat', 'Segoe Print', cursive;
+  --body: 'Nunito', system-ui, sans-serif;
+}
+
+
+/*
+   Reset and page */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font: 400 16px/1.6 var(--body);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, var(--blush), transparent 45%),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in srgb, var(--lime) 22%, var(--paper)),
+      transparent 50%
+    ),
+    var(--paper);
+  background-attachment: fixed;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+
+/*Header*/
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 2px dashed var(--line);
+}
+
+.top .actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand {
+  font: 700 1.7rem var(--display);
+  color: var(--plum);
+  text-decoration: none;
+}
+
+.beta {
+  display: inline-block;
+  margin-left: 0.2rem;
+  padding: 0.05rem 0.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--lime);
+  font: 700 0.65rem/1.4 var(--body);
+  vertical-align: middle;
+}
+
+/* buttonz */
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Variants */
+.btn.primary {
+  background: var(--lime);
+}
+
+.btn.danger {
+  background: var(--blush);
+}
+
+.btn.small {
+  padding: 0.15rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.btn.block {
+  width: 100%;
+}
+
+/*Form fields (inside dialogs and card boxes) */
+
+dialog label,
+.card-box label {
+  display: block;
+  margin: 0.8rem 0 0.25rem;
+  font-weight: 700;
+}
+
+dialog input[type='text'],
+dialog select,
+.card-box input[type='text'],
+.card-box textarea {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff;
+}
+
+
+/* Edit D */
+
+dialog {
+  width: min(92vw, 400px);
+  padding: 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--ink);
+  color: var(--ink);
+}
+
+dialog::backdrop {
+  background: rgba(75, 46, 54, 0.45);
+}
+
+dialog h2 {
+  margin: 0 0 0.6rem;
+  font: 700 1.8rem var(--display);
+}
+
+.dlg-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.dlg-actions .left {
+  margin-right: auto;
+}
+
+
+/* Colour swatches */
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--s);
+  cursor: pointer;
+}
+
+.swatch[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 3px var(--paper),
+    0 0 0 5px var(--ink);
+  transform: scale(1.1);
+}
+
+
+/* Free colour picker */
+
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+  font-weight: 600;
+}
+
+.picker input {
+  width: 46px;
+  height: 34px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.picker output {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,139 @@
+
+.author-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1rem, 4vw, 2.5rem) 4rem;
+}
+
+.author-page h1 {
+  margin: 0.4rem 0 1.2rem;
+  font: 700 clamp(2.4rem, 7vw, 3.6rem) / 1 var(--display);
+  color: var(--plum);
+}
+
+
+/* 
+   Card boxes
+ */
+
+.card-box {
+  margin-bottom: 1.6rem;
+  padding: 1.2rem 1.4rem 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  background: #fffdf8;
+  box-shadow: 5px 5px 0 var(--pink);
+}
+
+.card-box h2 {
+  margin: 0;
+  font: 700 1.9rem var(--display);
+}
+
+.card-box .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-box textarea {
+  resize: vertical;
+}
+
+.hint {
+  margin: 0.5rem 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.saved {
+  min-height: 1.4em;
+  margin: 0.4rem 0 0;
+  color: var(--plum);
+  font-weight: 700;
+}
+
+
+/* 
+   Pen names
+ */
+
+.authors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.pen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--c) 22%, #fff);
+}
+
+/* The pen name that would sign a new page right now */
+.pen.now {
+  box-shadow:
+    0 0 0 3px var(--paper),
+    0 0 0 5px var(--orange);
+}
+
+.pen-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--c);
+  font-size: 1.5rem;
+}
+
+.pen b {
+  display: block;
+  font: 700 1.4rem / 1 var(--display);
+}
+
+.pen small {
+  color: var(--ink-soft);
+}
+
+.pen-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+
+/* Little labels under each name */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  padding: 0 0.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tag.def {
+  background: var(--lime);
+}
