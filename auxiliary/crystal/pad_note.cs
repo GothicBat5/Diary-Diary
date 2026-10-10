@@ -1,7 +1,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.IO;
-using System.Text.RegularExpressions
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Http;
@@ -20,7 +20,7 @@ namespace SimpleNotepad
 
         private void InitializeComponents()
         {
-            Text = "C# Notepad";
+            Text = "Da - Notepadz";
             Width = 800;
             Height = 600;
 
@@ -39,8 +39,11 @@ namespace SimpleNotepad
             var fileMenu = new ToolStripMenuItem("File");
 
             var newItem = new ToolStripMenuItem("New");
+            
             var openItem = new ToolStripMenuItem("Open");
+            
             var saveItem = new ToolStripMenuItem("Save");
+            
             var exitItem = new ToolStripMenuItem("Exit");
 
             newItem.Click += NewFile;
