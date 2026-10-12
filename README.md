@@ -1,7 +1,8 @@
 # Halcyon-Diary 
 ### Diary-Diary
 
-> ![TIP] A personal diary web application designed to provide a space for recording thoughts.
+> [!TIP]
+> A personal diary web application designed to provide a space for recording thoughts.
 
 ## Tiny Overview:
 **Halcyon-Diary** is a web-based diary project focused on the personal journaling experience; 
