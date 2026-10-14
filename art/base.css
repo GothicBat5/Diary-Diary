@@ -39,6 +39,11 @@ body {
   margin: 0;
   font: 400 16px/1.6 var(--body);
   color: var(--ink);
+
+  position: relative;
+  isolation: isolate;
+  background-color: #f8f5f0;
+  
   background:
     radial-gradient(circle at 12% 0%, var(--blush), transparent 45%),
     radial-gradient(
@@ -48,6 +53,22 @@ body {
     ),
     var(--paper);
   background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+  linear-gradient(rgba(241, 225, 193, 0.68), rgba(240, 243, 255, 0.696)),
+    url("visuals/clay.jpeg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 ul {
