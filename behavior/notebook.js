@@ -147,6 +147,7 @@
     }
 
     $('entryAuthor').innerHTML = options.join('');
+    renderCount(entry);
   }
 
   function render() {
@@ -183,6 +184,7 @@
 
     entry.title = $('entryTitle').value;
     entry.body = $('entryBody').value;
+    renderCount(entry);
 
     $('saved').textContent = 'saving…';
     clearTimeout(saveTimer);
@@ -199,6 +201,16 @@
       card.querySelector('p').textContent = entry.body;
     }, 500);
   }
+
+function renderCount(entry) 
+{
+    const countWords = (text) => {
+    const trimmed = text.trim();
+    return trimmed ? trimmed.split(/\s+/).length : 0;
+  };
+  const words = countWords(entry.body);
+  $('wordCount').textContent = `${words} ${words === 1 ? 'word' : 'words'}`;
+}
 
   $('entryTitle').addEventListener('input', autosave);
   $('entryBody').addEventListener('input', autosave);
