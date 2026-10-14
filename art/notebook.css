@@ -196,6 +196,22 @@ body {
   resize: none;
 }
 
+.paper {
+  position: relative;
+  isolation: isolate;   /* keeps the image behind the text, inside the paper */
+}
+
+.paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: url("visuals/train.jpg") center / cover;
+  opacity: 0.18;        /* the "white on top" dial */
+  pointer-events: none;
+}
+
 /* empty states*/
 
 .empty {
@@ -298,4 +314,11 @@ body {
   .back {
     display: inline-block;
   }
+}
+
+.count {
+  margin: 0.4rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  text-align: right;
 }
